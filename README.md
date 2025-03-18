@@ -46,13 +46,17 @@ And log in again.
 To automatically install & run wg-easy, simply run:
 
 ```
-  docker run -d \
+docker run -d \
   --name=amnezia-wg-easy \
-  -e LANG=en \
-  -e WG_HOST=<🚨YOUR_SERVER_IP> \
-  -e PASSWORD_HASH=<🚨YOUR_ADMIN_PASSWORD_HASH> \
+  -e LANG=ru \
+  -e WG_HOST=`curl -s ipv4.icanhazip.com` \
+  -e PASSWORD_HASH='$2a$12$T8hyrJWOKGTBKa0xuZ5lAu0QaETz03EohUsjgWp9NYu6wxhiBevrW' \
   -e PORT=51821 \
   -e WG_PORT=51820 \
+  -e WG_ENABLE_EXPIRES_TIME=true \
+  -e UI_TRAFFIC_STATS=true \
+  -e WG_ENABLE_ONE_TIME_LINKS=true \
+  -e DICEBEAR_TYPE=bottts \
   -v ~/.amnezia-wg-easy:/etc/wireguard \
   -p 51820:51820/udp \
   -p 51821:51821/tcp \
