@@ -57,6 +57,7 @@ docker run -d \
   -e UI_TRAFFIC_STATS=true \
   -e WG_ENABLE_ONE_TIME_LINKS=true \
   -e DICEBEAR_TYPE=bottts \
+  -e WG_PERSISTENT_KEEPALIVE=15 \
   -v ~/.amnezia-wg-easy:/etc/wireguard \
   -p 51820:51820/udp \
   -p 51821:51821/tcp \
